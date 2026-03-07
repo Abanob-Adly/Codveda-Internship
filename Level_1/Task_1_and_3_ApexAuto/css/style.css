@@ -1,0 +1,223 @@
+/* --- CSS Variables for Design System --- */
+:root {
+  --primary-color: #f39c12;
+  --primary-hover: #e67e22;
+  --bg-dark: #121212;
+  --surface-dark: #1e1e1e;
+  --text-light: #f5f6fa;
+  --text-muted: #a4b0be;
+  --error-color: #ff4757;
+  --transition-speed: 0.3s;
+}
+
+/* --- Reset & Base --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* --- Navigation Bar (Flexbox) --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background-color: var(--surface-dark);
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.logo span {
+  color: var(--primary-color);
+}
+
+.navbar nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  margin-right: 1.5rem;
+  transition: color var(--transition-speed);
+}
+
+.navbar nav a:hover {
+  color: var(--primary-color);
+}
+
+/* --- Hero Section --- */
+.hero {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background:
+    linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.9)),
+    url("https://images.unsplash.com/photo-1611821064430-0d402209d6d8?auto=format&fit=crop&q=80")
+      center/cover;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+/* --- Buttons --- */
+.cta-button,
+.submit-btn {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color var(--transition-speed);
+}
+
+.cta-button:hover,
+.submit-btn:hover {
+  background-color: var(--primary-hover);
+}
+
+/* --- Services Grid (CSS Grid) --- */
+.services-section {
+  padding: 4rem 5%;
+  text-align: center;
+}
+
+.services-section h2 {
+  margin-bottom: 3rem;
+  color: var(--primary-color);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background-color: var(--surface-dark);
+  padding: 2rem;
+  border-radius: 8px;
+  border-top: 3px solid transparent;
+  transition: all var(--transition-speed);
+}
+
+.service-card:hover {
+  border-top-color: var(--primary-color);
+  transform: translateY(-5px);
+}
+
+/* --- Modal & Form Styles (<dialog> Element) --- */
+.modal {
+  margin: auto;
+  padding: 2rem;
+  background-color: var(--surface-dark);
+  color: var(--text-light);
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+}
+
+.modal::backdrop {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(3px);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: var(--error-color);
+}
+
+.input-group {
+  margin-bottom: 1.5rem;
+  text-align: right;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-muted);
+}
+
+.input-group input[type="text"],
+.input-group input[type="email"] {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: var(--bg-dark);
+  border: 1px solid #333;
+  border-radius: 5px;
+  color: var(--text-light);
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.error-text {
+  color: var(--error-color);
+  font-size: 0.85rem;
+  display: block;
+  margin-top: 0.3rem;
+  min-height: 20px;
+}
+
+/* Custom Dropdown Styles */
+.custom-dropdown {
+  list-style: none;
+  border: 1px solid #333;
+  border-radius: 5px;
+  background-color: var(--bg-dark);
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.custom-dropdown li {
+  padding: 0.8rem;
+  cursor: pointer;
+  border-bottom: 1px solid #222;
+  transition: background-color 0.2s;
+}
+
+.custom-dropdown li:hover,
+.custom-dropdown li.selected {
+  background-color: var(--primary-color);
+  color: #fff;
+}

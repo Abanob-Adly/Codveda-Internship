@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apex Auto | Smart Car Tuning</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">Apex<span>Auto</span></div>
+      <nav>
+        <a href="#services">Our Services</a>
+        <a href="#contact">Contact Us</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <h1>Power Up Your Ride.</h1>
+          <p>Expert care and smart tuning for a better drive.</p>
+          <button id="open-booking-btn" class="cta-button">
+            Book a Service
+          </button>
+        </div>
+      </section>
+
+      <section id="services" class="services-section">
+        <h2>What We Offer</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <h3>Smart Checkup</h3>
+            <p>We scan every part to keep you safe on the road.</p>
+          </div>
+          <div class="service-card">
+            <h3>Pro Tuning</h3>
+            <p>Boost your car's speed and enjoy smooth control.</p>
+          </div>
+          <div class="service-card">
+            <h3>Quick Care</h3>
+            <p>Fast oil and filter changes, so you don't wait.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <dialog id="booking-modal" class="modal">
+      <div class="modal-header">
+        <h3>Save Your Spot</h3>
+        <button id="close-modal-btn" class="close-btn">&times;</button>
+      </div>
+
+      <form id="booking-form">
+        <div class="input-group">
+          <label for="client-name">Full Name</label>
+          <input type="text" id="client-name" required />
+        </div>
+
+        <div class="input-group">
+          <label for="client-email">Email Address</label>
+          <input type="email" id="client-email" required />
+          <span id="email-error" class="error-text"></span>
+        </div>
+
+        <div class="input-group">
+          <label>Select Service</label>
+          <ul id="service-dropdown" class="custom-dropdown">
+            <li data-value="inspection">Smart Checkup</li>
+            <li data-value="tuning">Pro Tuning</li>
+            <li data-value="maintenance">Quick Care</li>
+          </ul>
+          <input type="hidden" id="selected-service" required />
+        </div>
+
+        <button type="submit" class="submit-btn">Confirm</button>
+      </form>
+    </dialog>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
