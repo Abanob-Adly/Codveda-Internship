@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ultra Task Tracker | Level 2</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main class="tracker-container">
+      <header class="tracker-header">
+        <button id="load-ultra-btn" class="ultra-btn">
+          ⚡ Load Ultra Routine
+        </button>
+        <h1>Ultra Tracker</h1>
+        <p class="task-count">
+          <span id="pending-count">0</span> tasks pending
+        </p>
+      </header>
+
+      <div class="input-group">
+        <input
+          type="text"
+          id="task-input"
+          placeholder="Enter a new task (e.g., Solve Codeforces problem)..."
+          autocomplete="off"
+        />
+        <button id="add-btn">Add Task</button>
+      </div>
+
+      <ul id="task-list" class="task-list"></ul>
+
+      <footer class="tracker-footer">
+        <button id="clear-completed-btn" class="clear-btn">
+          Clear Completed
+        </button>
+      </footer>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
