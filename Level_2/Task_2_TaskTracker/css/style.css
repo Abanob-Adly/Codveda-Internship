@@ -199,3 +199,47 @@ body {
 .clear-btn:hover {
   color: var(--text-main);
 }
+
+/* ========================================= */
+/* --- Responsive Design (Mobile Fixes) --- */
+/* ========================================= */
+@media (max-width: 600px) {
+  .tracker-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .tracker-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .ultra-btn {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .input-group {
+    flex-direction: column;
+  }
+
+  #task-input,
+  #add-btn {
+    width: 100%;
+  }
+
+  .task-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .task-label {
+    width: 100%;
+  }
+
+  .delete-btn {
+    width: 100%;
+    padding: 10px;
+  }
+}
