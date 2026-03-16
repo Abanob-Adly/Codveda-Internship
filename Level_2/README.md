@@ -4,10 +4,6 @@ A gamified, high-performance productivity system built entirely with **Vanilla J
 
 This project was developed as a core task during my Web Development Internship at **Codveda Technologies**, aiming to solidify the fundamentals of DOM manipulation, Event Delegation, and State Management before transitioning into React.js.
 
-## 🔗 Live Demo
-
-[Insert Your Live Preview Link Here]
-
 ## ✨ Key Features
 
 Unlike regular To-Do lists, Ultra Tracker is designed to build habits and provide psychological rewards:
@@ -35,8 +31,4 @@ The primary goal of this project was to avoid frameworks and rely purely on Vani
 - **Clean Code & Refactoring:** Organizing code into distinct rendering, storage, and event-handling functions.
 
 ## 💻 How to Run Locally
-
-1. Clone the repository:
-   ```bash
-   git clone [https://github.com/your-username/ultra-tracker.git](https://github.com/your-username/ultra-tracker.git)
-   ```
+Open: https://ultra-todos-responsive.netlify.app/
