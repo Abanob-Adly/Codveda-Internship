@@ -4,10 +4,6 @@ A gamified, high-performance productivity system built entirely with **Vanilla J
 
 This project was developed as a core task during my Web Development Internship at **Codveda Technologies**, aiming to solidify the fundamentals of DOM manipulation, Event Delegation, and State Management before transitioning into React.js.
 
-## 🔗 Live Demo
-
-[Insert Your Live Preview Link Here]
-
 ## ✨ Key Features
 
 Unlike regular To-Do lists, Ultra Tracker is designed to build habits and provide psychological rewards:
