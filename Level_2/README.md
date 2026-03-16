@@ -35,8 +35,4 @@ The primary goal of this project was to avoid frameworks and rely purely on Vani
 - **Clean Code & Refactoring:** Organizing code into distinct rendering, storage, and event-handling functions.
 
 ## 💻 How to Run Locally
-
-1. Clone the repository:
-   ```bash
-   git clone [https://github.com/your-username/ultra-tracker.git](https://github.com/your-username/ultra-tracker.git)
-   ```
+Open: https://ultra-todos-responsive.netlify.app/
