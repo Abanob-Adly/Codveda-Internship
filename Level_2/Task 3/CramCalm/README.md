@@ -72,7 +72,10 @@ UI touches include:
 - motivational banner
 - lightweight animations
 - toast feedback messages
-
+![CramCalm Dashboard](./assets/Screenshot 2026-03-17 113358.png
+)
+![CramCalm Dashboard](./assets/Screenshot 2026-03-17 113438.png
+)
 ### 9. Local Storage Support
 The app stores user data locally in the browser, so refreshing the page does not remove:
 
