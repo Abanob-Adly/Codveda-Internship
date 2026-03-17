@@ -1,5 +1,6 @@
 # CramCalm
 
+
 CramCalm is a **daily study planning web app** built with **React + Vite**.  
 It helps students turn a stressful exam schedule into a practical **day-by-day study plan** based on:
 
@@ -9,6 +10,8 @@ It helps students turn a stressful exam schedule into a practical **day-by-day s
 
 Instead of only showing study time **per week**, CramCalm calculates **how much to study per day** for each subject, making it more useful for revision and exam nights.
 
+![CramCalm Dashboard](./src/assets/dashboard-1.png)
+![CramCalm Dashboard](./src/assets/dashboard-2.png)
 ---
 
 ## Features
@@ -72,10 +75,7 @@ UI touches include:
 - motivational banner
 - lightweight animations
 - toast feedback messages
-![CramCalm Dashboard](./assets/Screenshot 2026-03-17 113358.png
-)
-![CramCalm Dashboard](./assets/Screenshot 2026-03-17 113438.png
-)
+
 ### 9. Local Storage Support
 The app stores user data locally in the browser, so refreshing the page does not remove:
 
