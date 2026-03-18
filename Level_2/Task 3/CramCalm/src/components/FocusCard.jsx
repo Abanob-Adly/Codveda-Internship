@@ -1,6 +1,11 @@
 import React from "react";
 import { Flame, Target, Clock3, CalendarDays } from "lucide-react";
-import { formatDate, formatDailyLoad, getWindowLabel } from "../utils/planner";
+import {
+  formatDate,
+  formatTotalLoad,
+  formatAverageLoad,
+  getWindowLabel,
+} from "../utils/planner";
 
 function FocusCard({ focusSubject }) {
   if (!focusSubject) {
@@ -14,7 +19,7 @@ function FocusCard({ focusSubject }) {
 
           <h3 className="focus-title">No focus subject yet</h3>
           <p className="focus-text">
-            Build your plan first and UniBrain will tell you what needs the most
+            Build your plan first and Cramcalm will tell you what needs the most
             attention.
           </p>
         </div>
@@ -39,12 +44,12 @@ function FocusCard({ focusSubject }) {
         <div className="chip-row">
           <div className="chip chip-accent">
             <Target size={14} />
-            <span>{formatDailyLoad(focusSubject)}</span>
+            <span>{formatTotalLoad(focusSubject)}</span>
           </div>
 
           <div className="chip">
             <Clock3 size={14} />
-            <span>{getWindowLabel(focusSubject)}</span>
+            <span>{formatAverageLoad(focusSubject)}</span>
           </div>
 
           <div className="chip">
@@ -52,6 +57,10 @@ function FocusCard({ focusSubject }) {
             <span>{formatDate(focusSubject.examDate)}</span>
           </div>
         </div>
+
+        <p className="plan-meta">
+          Study window: {getWindowLabel(focusSubject)}
+        </p>
       </div>
     </section>
   );
