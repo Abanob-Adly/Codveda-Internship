@@ -1,6 +1,11 @@
 import React from "react";
-import { Sparkles, Target, Flame } from "lucide-react";
-import { formatDailyLoad, getWindowLabel } from "../utils/planner";
+import { Sparkles, Target, Flame, CalendarDays } from "lucide-react";
+import {
+  formatDailyLoad,
+  getWindowLabel,
+  getDailySchedule,
+  formatHours,
+} from "../utils/planner";
 
 function PlanResult({ plan, onGenerate, hasSubjects, hasHours, isVisible }) {
   const visiblePlan = plan.filter((item) => item.allocatedHours > 0);
@@ -8,6 +13,8 @@ function PlanResult({ plan, onGenerate, hasSubjects, hasHours, isVisible }) {
     (sum, item) => sum + item.allocatedHours,
     0,
   );
+
+  const dailySchedule = getDailySchedule(visiblePlan);
 
   const getLabel = (index) => {
     if (index === 0) return "Main Focus";
@@ -59,12 +66,13 @@ function PlanResult({ plan, onGenerate, hasSubjects, hasHours, isVisible }) {
             <div>
               <h3 className="result-title">Your daily plan is ready</h3>
               <p className="result-text">
-                The app now shows how much to study per day for each subject,
-                not just per week.
+                The app now shows how much to study per day for each subject and
+                also gives you a realistic day-by-day schedule.
               </p>
             </div>
           </div>
 
+          {/* Subject summary */}
           <div className="plan-list">
             {visiblePlan.map((item, index) => {
               const percentage =
@@ -108,6 +116,45 @@ function PlanResult({ plan, onGenerate, hasSubjects, hasHours, isVisible }) {
                 </article>
               );
             })}
+          </div>
+
+          {/* Daily schedule */}
+          <div className="schedule-section">
+            <div className="schedule-header">
+              <div className="schedule-header__icon">
+                <CalendarDays size={18} />
+              </div>
+              <div>
+                <h3 className="schedule-title">Day-by-Day Schedule</h3>
+                <p className="schedule-text">
+                  This is the actual daily distribution of your study hours.
+                </p>
+              </div>
+            </div>
+
+            <div className="schedule-grid">
+              {dailySchedule.map((day) => (
+                <article key={day.day} className="day-card">
+                  <div className="day-card__top">
+                    <h4 className="day-card__title">Day {day.day}</h4>
+                    <div className="day-card__total">
+                      {formatHours(day.totalHours)}
+                    </div>
+                  </div>
+
+                  <div className="day-card__tasks">
+                    {day.tasks.map((task) => (
+                      <div key={task.subject} className="day-task">
+                        <span className="day-task__name">{task.subject}</span>
+                        <span className="day-task__hours">
+                          {formatHours(task.hours)}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </>
       )}

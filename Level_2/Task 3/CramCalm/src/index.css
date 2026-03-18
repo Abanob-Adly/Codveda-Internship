@@ -812,3 +812,231 @@ button {
     width: var(--target-width);
   }
 }
+/* DESKTOP */
+@media (min-width: 1024px) {
+  .layout {
+    grid-template-columns: 360px minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .card {
+    padding: 22px;
+  }
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes staggerIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes progressFill {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--target-width);
+  }
+}
+/* =========================================
+   PLAN + DAILY SCHEDULE OVERRIDE
+   Add this at the END of index.css
+========================================= */
+
+/* Result banner */
+.result-banner {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 107, 0.06),
+    rgba(29, 209, 161, 0.05)
+  );
+  border: 1px solid var(--border);
+}
+
+.result-icon {
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--primary);
+}
+
+.result-title {
+  color: #2a241e;
+}
+
+.result-text {
+  color: var(--muted);
+}
+
+/* Plan cards */
+.plan-card {
+  background: var(--panel-strong);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.plan-label {
+  color: var(--accent);
+}
+
+.plan-title {
+  color: #2a241e;
+}
+
+.plan-meta {
+  color: var(--muted);
+}
+
+.hours-badge {
+  background: rgba(255, 107, 107, 0.1);
+  color: var(--primary);
+  border: 1px solid rgba(255, 107, 107, 0.18);
+}
+
+.progress {
+  background: rgba(44, 62, 80, 0.12);
+}
+
+.progress-bar {
+  background: linear-gradient(
+    90deg,
+    var(--primary),
+    var(--accent),
+    var(--accent-2)
+  );
+}
+
+/* Daily schedule section */
+.schedule-section {
+  margin-top: 24px;
+}
+
+.schedule-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.schedule-header__icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 107, 107, 0.08);
+  border: 1px solid rgba(255, 107, 107, 0.16);
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.schedule-title {
+  margin: 0 0 6px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2a241e;
+}
+
+.schedule-text {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.day-card {
+  border-radius: var(--radius-lg);
+  background: var(--panel-strong);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  padding: 16px;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.day-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px rgba(59, 51, 43, 0.1);
+  border-color: rgba(255, 107, 107, 0.16);
+}
+
+.day-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.day-card__title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2a241e;
+}
+
+.day-card__total {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(29, 209, 161, 0.1);
+  border: 1px solid rgba(29, 209, 161, 0.18);
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.day-card__tasks {
+  display: grid;
+  gap: 10px;
+}
+
+.day-task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(44, 62, 80, 0.06);
+}
+
+.day-task__name {
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.day-task__hours {
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .schedule-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
